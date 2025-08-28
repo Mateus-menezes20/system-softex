@@ -21,6 +21,14 @@ def cadastrar():
 
     conn = conectar()
     cursor = conn.cursor()
+
+    # Verificar se o email já existe
+    cursor.execute("SELECT * FROM estudantes WHERE email=?", (email,))
+    if cursor.fetchone():
+        print("⚠️ Este e-mail já está cadastrado!")
+        conn.close()
+        return
+
     try:
         cursor.execute('''
             INSERT INTO estudantes (nome, nome_mae, nome_pai, email, idade, cpf, turma, senha)
@@ -46,26 +54,7 @@ def login():
 
     if usuario:
         print(f"✅ Bem-vindo(a), {usuario[1]}!")
+        return usuario  # Retorna o usuário para o menu principal
     else:
-        print("❌ Email ou senha incorretos.")
-
-def menu():
-    while True:
-        print("\n=== MENU ===")
-        print("1 - Cadastrar estudante")
-        print("2 - Login")
-        print("3 - Sair")
-        opcao = input("Escolha: ")
-
-        if opcao == "1":
-            cadastrar()
-        elif opcao == "2":
-            login()
-        elif opcao == "3":
-            print("Saindo...")
-            break
-        else:
-            print("Opção inválida!")
-
-if __name__ == "__main__":
-    menu()
+        print("⚠️ Email ou senha incorretos.")
+        return None

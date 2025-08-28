@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"Sistema Escolar","children":[{"content":"Objetivo","children":[],"payload":{"tag":"h2","lines":"2,3"}},{"content":"Funcionalidades","children":[{"content":"1. \n<p data-lines=\"12,13\"><strong>Cadastro de estudantes</strong></p>","children":[{"content":"Registro de informa&#xe7;&#xf5;es como:","children":[{"content":"Nome completo","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"Nome da m&#xe3;e e do pai","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"Email","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"Idade","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"CPF","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"Turma","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"Senha","children":[],"payload":{"tag":"li","lines":"20,21"}}],"payload":{"tag":"li","lines":"13,21"}},{"content":"Valida&#xe7;&#xe3;o de dados, incluindo confirma&#xe7;&#xe3;o de senha e verifica&#xe7;&#xe3;o de email duplicado.","children":[],"payload":{"tag":"li","lines":"21,23"}}],"payload":{"tag":"li","lines":"12,23","listIndex":1}},{"content":"2. \n<p data-lines=\"23,24\"><strong>Controle de presen&#xe7;a</strong></p>","children":[{"content":"Registro da presen&#xe7;a do aluno.","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"C&#xe1;lculo da porcentagem de presen&#xe7;a.","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"Exibi&#xe7;&#xe3;o de relat&#xf3;rio com a situa&#xe7;&#xe3;o do aluno com base na frequ&#xea;ncia.","children":[],"payload":{"tag":"li","lines":"26,28"}}],"payload":{"tag":"li","lines":"23,28","listIndex":2}},{"content":"3. \n<p data-lines=\"28,29\"><strong>Sistema de notas e listas</strong></p>","children":[{"content":"Cadastro de notas de <strong>atividades e provas</strong> por disciplina.","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"C&#xe1;lculo de m&#xe9;dia ponderada (atividades 40% e provas 60% por padr&#xe3;o).","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"Inclus&#xe3;o de <strong>pontos extras</strong>, caso existam.","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"Determina&#xe7;&#xe3;o autom&#xe1;tica da <strong>situa&#xe7;&#xe3;o do aluno</strong>:","children":[{"content":"Aprovado","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"Recupera&#xe7;&#xe3;o","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"Reprovado","children":[],"payload":{"tag":"li","lines":"35,36"}}],"payload":{"tag":"li","lines":"32,36"}},{"content":"Armazenamento dos resultados em arquivo (<code>resultado_aluno.txt</code>) para hist&#xf3;rico.","children":[],"payload":{"tag":"li","lines":"36,38"}}],"payload":{"tag":"li","lines":"28,38","listIndex":3}},{"content":"4. \n<p data-lines=\"38,39\"><strong>C&#xe1;lculo de m&#xe9;dia</strong></p>","children":[{"content":"Possibilita calcular a m&#xe9;dia final do aluno com base nas notas cadastradas.","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"Exibi&#xe7;&#xe3;o detalhada de notas, m&#xe9;dias e situa&#xe7;&#xe3;o por disciplina.","children":[],"payload":{"tag":"li","lines":"40,42"}}],"payload":{"tag":"li","lines":"38,42","listIndex":4}},{"content":"5. \n<p data-lines=\"42,43\"><strong>Cadastro e visualiza&#xe7;&#xe3;o de notas unificado</strong></p>","children":[{"content":"O aluno logado registra suas pr&#xf3;prias notas.","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"N&#xe3;o &#xe9; necess&#xe1;rio digitar nome ou idade manualmente.","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"O sistema gera o relat&#xf3;rio completo com m&#xe9;dias e situa&#xe7;&#xe3;o final.","children":[],"payload":{"tag":"li","lines":"45,47"}}],"payload":{"tag":"li","lines":"42,47","listIndex":5}}],"payload":{"tag":"h2","lines":"8,9"}},{"content":"Fluxo do Sistema","children":[{"content":"1. \n<p data-lines=\"51,52\"><strong>Menu Principal</strong></p>","children":[{"content":"Cadastrar estudante","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"Login","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"Sair","children":[],"payload":{"tag":"li","lines":"54,56"}}],"payload":{"tag":"li","lines":"51,56","listIndex":1}},{"content":"2. \n<p data-lines=\"56,57\"><strong>Menu do Aluno (ap&#xf3;s login)</strong></p>","children":[{"content":"Controle de presen&#xe7;a","children":[],"payload":{"tag":"li","lines":"57,58"}},{"content":"Sistema de listas/antigas notas","children":[],"payload":{"tag":"li","lines":"58,59"}},{"content":"Logout","children":[],"payload":{"tag":"li","lines":"59,60"}},{"content":"Cadastrar e calcular notas (novo sistema integrado)","children":[],"payload":{"tag":"li","lines":"60,62"}}],"payload":{"tag":"li","lines":"56,62","listIndex":2}},{"content":"3. \n<p data-lines=\"62,63\"><strong>Processo de notas</strong></p>","children":[{"content":"Sele&#xe7;&#xe3;o da disciplina (Matem&#xe1;tica, Portugu&#xea;s, Ci&#xea;ncias)","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"Registro das 3 notas de atividades","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"Registro das 3 notas de provas","children":[],"payload":{"tag":"li","lines":"65,66"}},{"content":"Inclus&#xe3;o de pontos extras (opcional)","children":[],"payload":{"tag":"li","lines":"66,67"}},{"content":"C&#xe1;lculo autom&#xe1;tico da m&#xe9;dia e situa&#xe7;&#xe3;o","children":[],"payload":{"tag":"li","lines":"67,68"}},{"content":"Armazenamento em arquivo e exibi&#xe7;&#xe3;o na tela","children":[],"payload":{"tag":"li","lines":"68,70"}}],"payload":{"tag":"li","lines":"62,70","listIndex":3}}],"payload":{"tag":"h2","lines":"49,50"}},{"content":"Tecnologias Utilizadas","children":[{"content":"<strong>Python 3.12</strong>","children":[],"payload":{"tag":"li","lines":"74,75"}},{"content":"<strong>SQLite</strong> para armazenamento de dados de estudantes","children":[],"payload":{"tag":"li","lines":"75,76"}},{"content":"Arquivos de texto para registro de resultados","children":[],"payload":{"tag":"li","lines":"76,77"}},{"content":"Estrutura modular com arquivos separados para:","children":[{"content":"Cadastro de estudantes (<code>sistema_cadastro.py</code>)","children":[],"payload":{"tag":"li","lines":"78,79"}},{"content":"Controle de presen&#xe7;a (<code>controle_presenca.py</code>)","children":[],"payload":{"tag":"li","lines":"79,80"}},{"content":"Registro e c&#xe1;lculo de notas (<code>notas_sistema.py</code>)","children":[],"payload":{"tag":"li","lines":"80,81"}},{"content":"Menus e integra&#xe7;&#xe3;o (<code>main.py</code>)","children":[],"payload":{"tag":"li","lines":"81,83"}}],"payload":{"tag":"li","lines":"77,83"}}],"payload":{"tag":"h2","lines":"72,73"}},{"content":"Benef&#xed;cios","children":[{"content":"Automa&#xe7;&#xe3;o do c&#xe1;lculo de m&#xe9;dias e controle de presen&#xe7;a.","children":[],"payload":{"tag":"li","lines":"87,88"}},{"content":"Registro seguro e organizado de todas as informa&#xe7;&#xf5;es do aluno.","children":[],"payload":{"tag":"li","lines":"88,89"}},{"content":"F&#xe1;cil expans&#xe3;o para inclus&#xe3;o de novas disciplinas, pesos diferentes e relat&#xf3;rios detalhados.","children":[],"payload":{"tag":"li","lines":"89,90"}},{"content":"Integra&#xe7;&#xe3;o direta entre login e cadastro de notas, garantindo que cada aluno registre apenas suas pr&#xf3;prias informa&#xe7;&#xf5;es.","children":[],"payload":{"tag":"li","lines":"90,91"}}],"payload":{"tag":"h2","lines":"85,86"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>
